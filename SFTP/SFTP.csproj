@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NLog" Version="4.6.8" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.5" />
+
+
+		<PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="3.1.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Nuane.SftpLite">
+	    <HintPath>..\libs\Nuane.SftpLite.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="CreateService.bat">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="nlog.config">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
